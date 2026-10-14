@@ -1,0 +1,5 @@
+"use client"
+import Link from "next/link";
+import { ArrowRight } from 'lucide-react';
+import { services } from '@/lib/site-content';
+export function ServiceGrid({limit,details=false}:{limit?:number,details?:boolean}) {return <div className={`grid gap-5 ${limit===3?'md:grid-cols-3':'md:grid-cols-2'}`}>{services.slice(0,limit).map((s,i)=><Link href={details?'/contact':'/services'} hash={details?'':s.id} id={details?s.id:undefined} key={s.id} className="service-card group"><div className="flex justify-between items-center mb-7"><span className="icon-tile"><s.icon size={23} strokeWidth={1.6}/></span><span className="text-[10px] text-muted-foreground font-display">0{i+1}</span></div><h3 className="text-[19px] font-medium mb-3">{s.title}</h3><p className="section-copy text-[12px]">{s.description}</p>{details&&<ul className="mt-5 space-y-3 text-sm">{s.details.map(d=><li key={d} className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-accent shrink-0"/>{d}</li>)}</ul>}<span className="arrow-link mt-6">{details?'Discuss your project':'Explore solution'} <ArrowRight/></span></Link>)}</div>;}
