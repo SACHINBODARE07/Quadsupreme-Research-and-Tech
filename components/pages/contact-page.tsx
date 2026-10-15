@@ -16,7 +16,6 @@ import {
   Building2,
   User,
   MessageSquare,
-  Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeading } from "@/components/site/site-shell";
@@ -26,25 +25,41 @@ const ContactMap = dynamic(() => import("@/components/site/contact-map"), { ssr:
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
 
-    // Simulate real form submission flow
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1200);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Flip to success view instantly — no waiting, no spinner
+    form.reset();
+    setSubmitted(true);
+
+    // Fire the email in the background
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("Name"),
+          email: formData.get("Email"),
+          company: formData.get("Company"),
+          interest: formData.get("Interest"),
+          message: formData.get("Project"),
+        }),
+      });
+    } catch (err) {
+      console.error("Contact send failed:", err);
+    }
   }
 
   return (
     <>
       <PageHeading
-        eyebrow="LET’S TALK"
+        eyebrow="LET'S TALK"
         title="Your next insight starts with a conversation."
-        description="Tell us what you’re curious about — a business challenge, a new market entry, or an audience you’d like to understand better."
+        description="Tell us what you're curious about — a business challenge, a new market entry, or an audience you'd like to understand better."
       />
 
       {/* CONTACT SECTION */}
@@ -232,49 +247,16 @@ export default function Contact() {
                 {/* Submit Button */}
                 <Button 
                   type="submit" 
-                  disabled={loading}
                   variant="brand" 
                   className="w-full h-12 rounded-xl text-base font-semibold shadow-lg hover:shadow-primary/25 transition-all"
                 >
-                  {loading ? (
-                    <>
-                      <Loader2 size={18} className="animate-spin mr-2" />
-                      Sending Inquiry...
-                    </>
-                  ) : (
-                    <>
-                      Send Message <Send size={16} className="ml-2" />
-                    </>
-                  )}
+                  Send Message <Send size={16} className="ml-2" />
                 </Button>
               </form>
             )}
           </div>
         </div>
       </section>
-
-      {/* MAP SECTION */}
-      {/* <section className="section-space pt-0">
-        <div className="container-site">
-          <div className="mb-8">
-            <p className="eyebrow text-primary mb-3">FIND US</p>
-            <h2 className="section-title">Where to find us.</h2>
-          </div>
-          <div className="rounded-3xl border border-border/80 overflow-hidden shadow-xl h-[380px] md:h-[440px]">
-            <Suspense fallback={<div className="h-full w-full bg-secondary animate-pulse" aria-label="Loading map" />}>
-              <ContactMap />
-            </Suspense>
-          </div>
-        </div>
-      </section> */}
-
-      {/* BOTTOM BAND */}
-      {/* <section className="bg-secondary/60 py-12 border-t border-border/60">
-        <div className="container-site flex items-center gap-4">
-          <ArrowUpRight className="text-primary shrink-0" size={24} />
-          <p className="font-display text-lg sm:text-xl font-medium">A fresh perspective could be your next strategic advantage.</p>
-        </div>
-      </section> */}
     </>
   );
 }

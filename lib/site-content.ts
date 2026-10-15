@@ -1,21 +1,155 @@
-import { BarChart3, UsersRound, MessagesSquare, Workflow, HeartPulse, ShoppingBag, Landmark, Laptop, Car, Radio } from 'lucide-react';
+import {
+  BarChart3,
+  UsersRound,
+  MessagesSquare,
+  Workflow,
+  HeartPulse,
+  ShoppingBag,
+  Landmark,
+  Laptop,
+  Car,
+  Radio,
+} from "lucide-react";
 export const services = [
- { id:'quantitative', title:'Quantitative research', short:'See the patterns. Find the possibilities.', description:'Understand what people think and how they behave through well-designed surveys, brand tracking, and concept testing.', icon:BarChart3, details:['Consumer & B2B surveys','Brand health & customer experience','Concept, product & pricing research'] },
- { id:'qualitative', title:'Qualitative research', short:'Go beyond the what. Discover the why.', description:'Bring depth to your decisions with conversations that uncover motivations, experiences, and unmet needs.', icon:MessagesSquare, details:['In-depth interviews','Focus groups & online communities','Exploratory & customer journey research'] },
- { id:'audience', title:'Audience & data collection', short:'The right voices. A clearer perspective.', description:'Build a thoughtful sampling approach and connect your study with audiences that matter to your research.', icon:UsersRound, details:['B2C, B2B & specialist audiences','Online & assisted data collection','Screening & response-quality review'] },
- { id:'technology', title:'Research technology', short:'Less complexity. More clarity.', description:'Support your research from survey programming to data processing, with practical technology and clear reporting.', icon:Workflow, details:['Survey programming & logic','Data processing & tabulation','Dashboards & insight visualization'] },
+  {
+    id: "quantitative",
+    title: "Quantitative research",
+    short: "See the patterns. Find the possibilities.",
+    description:
+      "Understand what people think and how they behave through well-designed surveys, brand tracking, and concept testing.",
+    icon: BarChart3,
+    details: [
+      "Consumer & B2B surveys",
+      "Brand health & customer experience",
+      "Concept, product & pricing research",
+    ],
+  },
+  {
+    id: "qualitative",
+    title: "Qualitative research",
+    short: "Go beyond the what. Discover the why.",
+    description:
+      "Bring depth to your decisions with conversations that uncover motivations, experiences, and unmet needs.",
+    icon: MessagesSquare,
+    details: [
+      "In-depth interviews",
+      "Focus groups & online communities",
+      "Exploratory & customer journey research",
+    ],
+  },
+  {
+    id: "audience",
+    title: "Audience & data collection",
+    short: "The right voices. A clearer perspective.",
+    description:
+      "Build a thoughtful sampling approach and connect your study with audiences that matter to your research.",
+    icon: UsersRound,
+    details: [
+      "B2C, B2B & specialist audiences",
+      "Online & assisted data collection",
+      "Screening & response-quality review",
+    ],
+  },
+  {
+    id: "technology",
+    title: "Research technology",
+    short: "Less complexity. More clarity.",
+    description:
+      "Support your research from survey programming to data processing, with practical technology and clear reporting.",
+    icon: Workflow,
+    details: [
+      "Survey programming & logic",
+      "Data processing & tabulation",
+      "Dashboards & insight visualization",
+    ],
+  },
 ];
 export const industries = [
- {title:'Consumer & retail', icon:ShoppingBag, description:'Explore shopping behaviors, brand perceptions, and the experiences that influence purchase decisions.'},
- {title:'Healthcare & wellness', icon:HeartPulse, description:'Understand patient experiences, wellness priorities, and the perspectives of healthcare professionals.'},
- {title:'Technology & telecom', icon:Laptop, description:'Discover adoption barriers, usability needs, and what people expect from connected experiences.'},
- {title:'Financial services', icon:Landmark, description:'Explore financial attitudes, customer trust, and the changing expectations of banking and insurance.'},
- {title:'Automotive & mobility', icon:Car, description:'Investigate mobility choices, emerging technologies, and the path from consideration to purchase.'},
- {title:'Media & advertising', icon:Radio, description:'Understand audiences, test creative ideas, and explore how your message connects.'},
+  {
+    title: "Consumer & retail",
+    icon: ShoppingBag,
+    description:
+      "Explore shopping behaviors, brand perceptions, and the experiences that influence purchase decisions.",
+  },
+  {
+    title: "Healthcare & wellness",
+    icon: HeartPulse,
+    description:
+      "Understand patient experiences, wellness priorities, and the perspectives of healthcare professionals.",
+  },
+  {
+    title: "Technology & telecom",
+    icon: Laptop,
+    description:
+      "Discover adoption barriers, usability needs, and what people expect from connected experiences.",
+  },
+  {
+    title: "Financial services",
+    icon: Landmark,
+    description:
+      "Explore financial attitudes, customer trust, and the changing expectations of banking and insurance.",
+  },
+  {
+    title: "Automotive & mobility",
+    icon: Car,
+    description:
+      "Investigate mobility choices, emerging technologies, and the path from consideration to purchase.",
+  },
+  {
+    title: "Media & advertising",
+    icon: Radio,
+    description:
+      "Understand audiences, test creative ideas, and explore how your message connects.",
+  },
 ];
 export const articles = [
- {slug:'better-questions-better-insights', category:'RESEARCH PERSPECTIVES', title:'Better questions. Better insights.', summary:'Why the quality of your research starts long before the first response.', paragraphs:['Every useful research project begins with a decision. What does the team need to choose, change, or understand? A clear answer keeps the study focused and prevents a questionnaire from becoming a collection of unrelated curiosities.','Write questions in everyday language. Avoid double-barreled questions, leading phrases, and assumptions that respondents may not share. A short pilot can reveal confusing wording and uncover gaps before the full study begins.','Start with your decision, define the audience, and build a question set that connects the two. Better inputs make it easier to turn the results into an informed next step.']},
- {slug:'human-side-of-data', category:'HUMAN UNDERSTANDING', title:'The human side of every data point.', summary:'Connecting the scale of quantitative research with the depth of real conversations.', paragraphs:['A chart can show a change in behavior, but it cannot always explain why that change happened. Listening to people adds context that is easy to lose in aggregated data.','Quantitative methods help identify patterns across a defined audience. Interviews and group discussions help explore motivations, tensions, and the language people use to describe their experiences. Neither approach replaces the other.','Choose a method based on the question, rather than habit. When scale and depth are both important, a mixed-method approach can offer a fuller picture.']},
- {slug:'research-ready-for-action', category:'INSIGHTS IN PRACTICE', title:'Make your research ready for action.', summary:'Moving from a collection of findings to a meaningful business conversation.', paragraphs:['An insightful report is not simply a long list of results. It connects the evidence to the decisions a team needs to make, while being honest about uncertainty and the limits of the study.','Organize the story around a few clear questions. Distinguish findings from interpretations, show the relevant context, and give stakeholders space to discuss what the evidence means for them.','Close with a practical next step. It might be a new test, a product refinement, or a focused conversation with customers. Research has value when it supports thoughtful action.']},
+  {
+    slug: "better-questions-better-insights",
+    category: "RESEARCH PERSPECTIVES",
+    title: "Better questions. Better insights.",
+    summary:
+      "Why the quality of your research starts long before the first response.",
+    paragraphs: [
+      "Every useful research project begins with a decision. What does the team need to choose, change, or understand? A clear answer keeps the study focused and prevents a questionnaire from becoming a collection of unrelated curiosities.",
+      "Write questions in everyday language. Avoid double-barreled questions, leading phrases, and assumptions that respondents may not share. A short pilot can reveal confusing wording and uncover gaps before the full study begins.",
+      "Start with your decision, define the audience, and build a question set that connects the two. Better inputs make it easier to turn the results into an informed next step.",
+    ],
+  },
+  {
+    slug: "human-side-of-data",
+    category: "HUMAN UNDERSTANDING",
+    title: "The human side of every data point.",
+    summary:
+      "Connecting the scale of quantitative research with the depth of real conversations.",
+    paragraphs: [
+      "A chart can show a change in behavior, but it cannot always explain why that change happened. Listening to people adds context that is easy to lose in aggregated data.",
+      "Quantitative methods help identify patterns across a defined audience. Interviews and group discussions help explore motivations, tensions, and the language people use to describe their experiences. Neither approach replaces the other.",
+      "Choose a method based on the question, rather than habit. When scale and depth are both important, a mixed-method approach can offer a fuller picture.",
+    ],
+  },
+  {
+    slug: "research-ready-for-action",
+    category: "INSIGHTS IN PRACTICE",
+    title: "Make your research ready for action.",
+    summary:
+      "Moving from a collection of findings to a meaningful business conversation.",
+    paragraphs: [
+      "An insightful report is not simply a long list of results. It connects the evidence to the decisions a team needs to make, while being honest about uncertainty and the limits of the study.",
+      "Organize the story around a few clear questions. Distinguish findings from interpretations, show the relevant context, and give stakeholders space to discuss what the evidence means for them.",
+      "Close with a practical next step. It might be a new test, a product refinement, or a focused conversation with customers. Research has value when it supports thoughtful action.",
+    ],
+  },
 ];
-export function pageHead(title:string, description:string) { const full = `${title} | Quadsupreme Research & Technologies`; return {meta:[{title:full},{name:'description',content:description},{property:'og:title',content:full},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}; }
+export function pageHead(title: string, description: string) {
+  const full = `${title} | Quadsupreme Research & Technologies`;
+  return {
+    meta: [
+      { title: full },
+      { name: "description", content: description },
+      { property: "og:title", content: full },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  };
+}
